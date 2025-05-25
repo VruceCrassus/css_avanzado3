@@ -1,0 +1,231 @@
+
+.sidebar, .nav a{
+    background: rgba(10, 10, 180, 0.827);
+    color: white;
+}
+.nav a {
+    text-decoration: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* Sidebar mobile */
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(10, 10, 180, 0.827);
+    color: white;
+    position: relative;
+}
+
+.sidebar h2 {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.sidebar .fa-car {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.scroll {
+  display: block;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.nav {
+  display: none;
+  flex-direction: column;
+  background-color: #333;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+}
+
+.nav a {
+  color: white;
+  padding: 1rem;
+  border-top: 1px solid #444;
+  text-decoration: none;
+}
+
+/* Toggle nav visibility */
+.sidebar.active .nav {
+  display: flex;
+}
+
+.header {
+  grid-area: header;
+  background-color: #eee; /* gris claro */
+  padding: 1rem;
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+select{
+    padding: 1rem 8rem 1rem 8rem;
+    border-radius: 8px;
+}
+
+
+.main {
+  grid-area: main;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 1rem;
+}
+
+.card-img img {
+  width: 100%;
+  height: auto;
+}
+.card button{
+    background: rgba(10, 10, 180, 0.827);
+    color: white;
+    border-radius: 4px;
+    padding: 0.2rem;
+}
+
+.logo{
+    display: flex;
+}
+
+.footer {
+    grid-area: footer;
+    background: rgba(10, 10, 180, 0.827);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.footer-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.footer-list a {
+  color: white;
+  font-size: 1.2rem;
+}
+.pagina{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagina button{
+    background-color: white;
+    color: blue;
+    border: #444 solid 1px;
+    padding: 1rem;
+    border-radius: 8px;
+}
+.pagina{
+    gap: 0.2rem;
+    
+}
+
+    @media (min-width: 576px) {
+        .grid {
+        display: grid;
+        grid-template-areas:
+        "sidebar header"
+        "footer  main";
+        grid-template-columns: 250px 1fr;
+        grid-template-rows: auto 1fr;
+        min-height: 100vh;
+        }
+        .footer{
+        grid-area: footer;
+        background: blue;
+        color: white;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* 🔽 Empuja el contenido hacia el fondo */
+        height: 100%; /* Asegura que ocupe todo el espacio de su celda grid */
+        }
+        .header select{
+        grid-area: header;
+        background-color: white; /* gris claro */
+        padding: 1rem 45rem 1rem 45rem;
+
+        }
+
+        .main {
+        grid-area: main;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+        gap: 1rem;
+        }
+        .card {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        text-align: center;
+        padding: 1.5rem;
+        }
+        .card-img img {
+        width: 100%;
+        height: auto;
+        max-height: 120px;
+        object-fit: cover;
+        }
+        .card button {
+        background: rgba(10, 10, 180, 0.827);
+        color: white;
+        border-radius: 4px;
+        padding: 0.3rem 0.5rem;
+        font-size: 0.75rem;
+        }
+        .pagina {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* ✅ centrado horizontal */
+        gap: 0.3rem;
+        grid-column: 1 / -1; /* ✅ ocupa todo el ancho del grid */
+        }
+        .nav{
+            display: flex;
+            flex-direction: column;
+/*             border: none; */
+/*             align-items: center; */
+/*             background-color: blue; */
+        }
+        .nav i{
+            display: none;
+        }
+}
+    
